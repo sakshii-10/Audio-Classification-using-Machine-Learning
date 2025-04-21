@@ -28,8 +28,7 @@ I developed a binary classification system that analyzes text derived from speec
   - Tuned hyperparameters using cross-validation
   - Evaluated using precision, recall, F1-score
 - **Visualization**:
-  - Word clouds
-  - Label distributions
+  - Accuracy-precision bar chart 
   - Confusion matrix
 
 
