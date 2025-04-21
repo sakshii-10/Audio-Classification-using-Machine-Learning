@@ -55,8 +55,7 @@ A machine learning pipeline that:
 
 ## 🚀 How to Run
 
-1. Clone the repository  
-```cd ml-end-deception```
+1. Clone the repository  ```cd ml-end-deception```
 2. Install the dependencies
 ```pip install -r requirements.txt```
 3. Launch the notebook
