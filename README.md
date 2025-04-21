@@ -1,8 +1,4 @@
-# Audio-Classification-using-Machine-Learning
-A machine learning-based deception detection project for ECS7020P (Principles of Machine Learning) at Queen Mary University of London. This project explores various classifiers and semantic feature engineering techniques to identify truthful vs deceptive statements.
-
-
-# 🤖 Deception Detection using Machine Learning
+# Voice to Verdict
 
 This repository contains a mini-project submitted for the **ECS7020P – Data Semantics** module at **Queen Mary University of London**. The goal of the project is to classify **truthful vs deceptive statements** using traditional and semantic-aware machine learning techniques.
 
