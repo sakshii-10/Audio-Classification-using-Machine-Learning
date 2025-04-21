@@ -6,53 +6,58 @@ This repository contains a mini-project submitted for the **ECS7020P – Princip
 ## 📊 Dataset Details
 
 - **File:** `MLEndDeception_small.csv`
-- **Size:** Small subset of larger deceptive speech corpus
 - **Features:** Raw text + labels (`truthful`, `deceptive`)
+- **Format**: `.wav` audio files labeled as truthful (1) or deceptive (0)
 ---
 
 ## ✅ What Did I Build?
 
-I developed a binary classification system that analyzes text derived from speech and predicts whether a statement is **truthful** or **deceptive**. The model was trained on labeled samples and deployed in a Jupyter Notebook using scikit-learn pipelines.
-
----
-
-## ⚙️ How Does It Work?
-
-- **Dataset**: `MLEndDeception_small.csv` with labeled samples of true/false statements.
-- **Preprocessing**:
-  - Cleaned and tokenized text
-  - Removed stopwords and punctuations
-  - Extracted features using TF-IDF and semantic tags
-- **Model Training**:
-  - Tested multiple classifiers: Logistic Regression, SVM, Random Forest
-  - Tuned hyperparameters using cross-validation
-  - Evaluated using precision, recall, F1-score
-- **Visualization**:
-  - Accuracy-precision bar chart 
-  - Confusion matrix
+A machine learning pipeline that:
+- Downloads and processes a labeled deception audio dataset
+- Splits audio recordings into 30-second chunks
+- Extracts features from each chunk
+- Trains models to predict whether the speaker is being truthful or deceptive
 
 
 ---
-## 🧠 Approach
+🧠 Approach
+- Data Download: Retrieved a labeled deception speech dataset using the mlend Python package.
+- Preprocessing: Skipped the first 15 seconds of each audio file to remove silence and intros.
+- Chunking: Split each audio into 30-second segments to standardize input and increase data volume.
+- Labeling: Saved each chunk with its corresponding label (truthful or deceptive) in chunk_labels.csv.
+- Feature Extraction & Modeling (next step): Plan to extract acoustic features (e.g., MFCCs, pitch, energy) and train classification models using scikit-learn.
 
-- **Exploratory Data Analysis**: Label distribution, text lengths, word clouds.
-- **Preprocessing**: Tokenization, TF-IDF vectorization, stopword removal.
-- **Models Used**:
-  - Logistic Regression
-  - SVM (Linear/Kernel)
-  - Random Forest / Decision Trees
-  - (Optional) Word Embeddings or NLP semantic features
-- **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, Confusion Matrix
+---
+## ⚙️ How It Works
+
+### 🔁 Preprocessing Steps
+- Skips first 15 seconds of each clip (to remove intros)
+- Splits audio into 30-second chunks
+- Each chunk is saved and mapped to a label
+- Outputs a `chunk_labels.csv` file with mapping of chunk → label
+
+### 🔧 Feature Extraction & Modeling *(in progress or next step)*
+- You can extract features using `librosa` (MFCCs, energy, pitch, etc.)
+- Models like Logistic Regression, SVM, or Random Forest can be trained on chunk-level features
+
+---
+
+🧠 Why This Project?
+- To explore audio signal processing and its application in behavioral modeling
+- To understand how acoustic cues relate to human deception
+- To bridge machine learning with real-world speech-based data
 
 --- 
-## 📚 Key Learnings
+📚 Key Learnings
 
-- **Text preprocessing choices matter** — lemmatization, stopwords, and token length affect model performance
-- **TF-IDF outperformed simpler frequency-based vectors**, especially with Logistic Regression
-- **SVMs excelled in high-dimensional sparse spaces** like TF-IDF
-- **Model explainability** (through confusion matrix and feature weights) is vital when dealing with sensitive classifications
-- **Semantic enrichment** (POS tags, sentence structure) can improve performance but adds computational complexity
-
+- Chunking audio helps balance and expand datasets
+- Preprocessing steps (e.g., skipping intros) are crucial for quality training
+- librosa is powerful for extracting meaningful acoustic features
+- Combining ML + Audio offers great insight into speech-based applications
+ ---
+📁 Output Files
+- audio_chunks/: Folder containing all processed audio chunks
+- chunk_labels.csv: Mapping of chunk file → label
 ---
 
 ## 🚀 How to Run
