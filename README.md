@@ -20,7 +20,7 @@ A machine learning pipeline that:
 
 
 ---
-🧠 Approach
+## 🧠 Approach
 - Data Download: Retrieved a labeled deception speech dataset using the mlend Python package.
 - Preprocessing: Skipped the first 15 seconds of each audio file to remove silence and intros.
 - Chunking: Split each audio into 30-second segments to standardize input and increase data volume.
@@ -40,22 +40,15 @@ A machine learning pipeline that:
 - You can extract features using `librosa` (MFCCs, energy, pitch, etc.)
 - Models like Logistic Regression, SVM, or Random Forest can be trained on chunk-level features
 
----
-
-🧠 Why This Project?
-- To explore audio signal processing and its application in behavioral modeling
-- To understand how acoustic cues relate to human deception
-- To bridge machine learning with real-world speech-based data
-
 --- 
-📚 Key Learnings
+## 📚 Key Learnings
 
 - Chunking audio helps balance and expand datasets
 - Preprocessing steps (e.g., skipping intros) are crucial for quality training
 - librosa is powerful for extracting meaningful acoustic features
 - Combining ML + Audio offers great insight into speech-based applications
  ---
-📁 Output Files
+## 📁 Output Files
 - audio_chunks/: Folder containing all processed audio chunks
 - chunk_labels.csv: Mapping of chunk file → label
 ---
